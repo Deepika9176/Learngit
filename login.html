@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <title>Skill-lync - Login</title>
+      <link rel="stylesheet" href="css/style.css">
+      <link rel="stylesheet" href="css/bootstrap4.css">
+       
+   </head>
+   <body>
+     <div class="container-fluid"> 
+         <div class="login_logo p-4">
+            <a href="index.html"> <img src="images/logo.png"></a>
+         </div>
+         <div class="login-container">
+            <div class="">
+               <div class="py-2 text-center title_font dblue_txt" >
+                  <h1><span>Welcome </span> to Skill-Lync !</h1>
+               </div>
+               <p class="text-center py-3">Please login to your account</p>
+               <div class="d-flex justify-content-center align-items-center justify-content-around ">
+                  <div class="login_social"><a href="index.html"><img src="images/google.svg"></a></div>
+                  <div class="login_social"><a href="index.html"><img src="images/facebook.svg"></a></div>
+                  <div class="login_social"><a href="index.html"><img src="images/linkedin.svg"></a></div>
+                  <div class="login_social"><a href="index.html"><img src="images/yahoo.svg"></a></div>
+               </div>
+               
+               <div class="signupvia py-3">
+                  <p>or Sign-up with</p>
+               </div>
+              
+            
+
+                  <div class="email_frm">
+                  <div class="form-group">
+                     <label for="email" class="">Email ID</label>
+                     <input type="email" class="form-control email_login" placeholder="Enter your email" id="">
+                  </div>
+                  <button type="submit" class="btn green_btn get_otp w-100" href="#">Get OTP</button>
+                  </div>
+
+                   <div class="text-center font_12 input_frm disnon" id="">
+                     <label>OTP Sent to ‘justanexample@gmail.com’ <a href="#">Change ?</a></label>
+                         <div id="otp" class="otp_inputs d-flex flex-row justify-content-center py-2"> 
+                              <input class="m-2 text-center form-control rounded" type="number" id="first" maxlength="1" /> 
+                              <input class="m-2 text-center form-control rounded" type="number" id="second" maxlength="1" /> 
+                              <input class="m-2 text-center form-control rounded" type="number" id="third" maxlength="1" /> 
+                              <input class="m-2 text-center form-control rounded" type="number" id="fourth" maxlength="1" /> 
+                              <input class="m-2 text-center form-control rounded" type="number" id="fifth" maxlength="1" /> 
+                              <input class="m-2 text-center form-control rounded" type="number" id="sixth" maxlength="1" /> 
+                        </div>
+                   <label>Not received your code? <a href="#">Resend code</a></label>
+
+                  <button type="submit" class="btn green_btn loginbtn w-100" href="#">Login</button>
+
+               </div>
+
+           
+
+               <div class="py-3 font_12">
+                  <p class="text-secondary  m-0 font_12">By signing up, you agree to our <u><a href="#" class="primary-color">Terms of use</a></u> and <u><a href="#">Privacy Policy</a></u></p>
+               </div>
+              
+            </div>
+         </div> 
+</div>
+
+
+   <footer class="login_footer">
+      	<div class="border-top">
+      		<div class="container-fluid">
+            <div class="py-3">
+               <p class="text-secondary font_12">© 2021 Skill-Lync Inc. All Rights Reserved.</p>
+            </div>
+            </div>
+         </div>
+    </footer>
+             
+      <script src="js/jQuery.min.js"></script>
+       
+      <script src="js/bootstrap4.min.js"></script>   
+      <script src="js/fontawesome.js"></script>
+      <script src="js/custom.js"></script>
+
+      <script>
+   
+        
+       
+      $(".get_otp").click(function () {
+ 
+            $(".email_frm").addClass('disnon');
+            $(".input_frm").removeClass("disnon");
+           
+              });
+
+       $(".loginbtn").click(function () {
+ 
+            $(".email_frm").removeClass('disnon');
+            $(".input_frm").addClass("disnon");
+           
+              });
+ 
+
+    </script>
+
+
+
+      <script type="text/javascript">
+         document.addEventListener("DOMContentLoaded", function(event) {
+
+    function OTPInput() {
+        const inputs = document.querySelectorAll('#otp > *[id]');
+        for (let i = 0; i < inputs.length; i++) {
+            inputs[i].addEventListener('keydown', function(event) {
+                if (event.key === "Backspace") {
+                    inputs[i].value = '';
+                    if (i !== 0) inputs[i - 1].focus();
+                } else {
+                    if (i === inputs.length - 1 && inputs[i].value !== '') {
+                        return true;
+                    } else if (event.keyCode > 47 && event.keyCode < 58) {
+                        inputs[i].value = event.key;
+                        if (i !== inputs.length - 1) inputs[i + 1].focus();
+                        event.preventDefault();
+                    } else if (event.keyCode > 64 && event.keyCode < 91) {
+                        inputs[i].value = String.fromCharCode(event.keyCode);
+                        if (i !== inputs.length - 1) inputs[i + 1].focus();
+                        event.preventDefault();
+                    }
+                }
+            });
+        }
+    }
+    OTPInput();
+});
+      </script>
+   </body>
+</html>
